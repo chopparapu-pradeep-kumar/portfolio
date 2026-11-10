@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../theme/app_colors.dart';
 
 class ContactCard extends StatefulWidget {
-  final IconData icon;
+  final FaIconData icon;
   final String label;
   final Color color;
   final VoidCallback onTap;
@@ -37,9 +38,12 @@ class _ContactCardState extends State<ContactCard> {
           padding: const EdgeInsets.symmetric(vertical: 14),
           transform: Matrix4.identity()..translate(0.0, _hovered ? -6.0 : 0.0),
           decoration: BoxDecoration(
-            gradient: isDark ? AppColors.cardGradientDark : AppColors.cardGradientLight,
+            gradient: isDark
+                ? AppColors.cardGradientDark
+                : AppColors.cardGradientLight,
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: widget.color.withOpacity(_hovered ? 0.6 : 0.2)),
+            border: Border.all(
+                color: widget.color.withOpacity(_hovered ? 0.6 : 0.2)),
             boxShadow: [
               BoxShadow(
                 color: widget.color.withOpacity(_hovered ? 0.4 : 0.1),
@@ -50,7 +54,11 @@ class _ContactCardState extends State<ContactCard> {
           ),
           child: Column(
             children: [
-              Icon(widget.icon, color: widget.color, size: 28),
+              FaIcon(
+                widget.icon,
+                color: widget.color,
+                size: 28,
+              ),
               const SizedBox(height: 8),
               Text(widget.label,
                   style: GoogleFonts.inter(

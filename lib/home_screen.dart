@@ -826,7 +826,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: const Color(0xFF25D366),
                 onTap: _launchWhatsApp),
             ContactCard(
-                icon: Icons.email,
+                icon: FontAwesomeIcons.envelope,
                 label: 'Email',
                 color: const Color(0xFFEA4335),
                 onTap: _launchEmail),
